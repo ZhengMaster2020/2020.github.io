@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="语义化标签以及常用标签, hexo blog 个人博客  JavaScript 前端工程师">
-    <meta name="description" content="一开始接触到页面这个东西，毫无疑问大家首页看到的是html这玩意。我对html有了初步的认识是在我大二上数据结构这门课程的时候老师讲课之余就给我们讲讲深度学习，网页设计之类的简单知识。自从那以后就断断续续在W3school以及MDN学习它，">
+    <meta name="keywords" content="js中对象复制的深浅拷贝问题, hexo blog 个人博客  JavaScript 前端工程师">
+    <meta name="description" content="前言ECMAScript中存在简单数据类型(或称基本数据类型、原始类型 主要有：String、Number、Boolean、Null、Undefined)和复杂的数据类型(或者对象类型Object)；后来在ECMAScript中新增了一种数">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>语义化标签以及常用标签 | ZhengMaster</title>
+    <title>js中对象复制的深浅拷贝问题 | ZhengMaster</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        语义化标签以及常用标签
+                        js中对象复制的深浅拷贝问题
                     </div>
                 </div>
             </div>
@@ -377,8 +377,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML-5/" target="_blank">
-                                <span class="chip bg-color">HTML(5)</span>
+                            <a href="/tags/js/" target="_blank">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -389,8 +389,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/HTML-5-CSS-3/" class="post-category" target="_blank">
-                                HTML(5)/CSS(3)
+                            <a href="/categories/ECMAScript/" class="post-category" target="_blank">
+                                ECMAScript
                             </a>
                         
                     </div>
@@ -417,59 +417,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一开始接触到页面这个东西，毫无疑问大家首页看到的是html这玩意。我对html有了初步的认识是在我大二上数据结构这门课程的时候老师讲课之余就给我们讲讲深度学习，网页设计之类的简单知识。自从那以后就断断续续在<a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">W3school</a>以及<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="noopener">MDN</a>学习它，以下内容是对之前的学习做个较为简单的总结。</p>
-<h3 id="1-常用标签"><a href="#1-常用标签" class="headerlink" title="1. 常用标签"></a>1. 常用标签</h3><p>html标签又称为html元素，html元素分为<strong>行内(内联)元素</strong>、<strong>行内块级元素</strong>以及<strong>块级元素</strong>。</p>
-<blockquote>
-<p>行内元素的特点<br>    + 这些行内元素本身的属性<strong>display:inline</strong>，而行内块级元素则为<strong>display:inline-block;</strong><br>    + 和其他行内元素从左到右在一行显示，<strong>给它设置的宽高值无效</strong>，但可以设置内外边距的值(左右有效，上下无效)<br>    + 行内元素的宽高是由本身内容的大小决定（文字、图片等）<br>    + 行内元素只能容纳文本或者其他内联元素，不要在行内元素嵌套块级元素</p>
-</blockquote>
-<h3 id="2-常见的行内元素"><a href="#2-常见的行内元素" class="headerlink" title="2.常见的行内元素"></a>2.常见的行内元素</h3><p>“<strong>span</strong>” 标签，通常用于放一些文字和icon图标之类作为内敛容器等<br><strong>”script“</strong> 标签，常用于引入外部文件，嵌入代码等<br>“<strong>a</strong>” 标签，常用于超链接，锚点等方面<br><strong>“img”</strong> 标签，用于引入外部图像文件<br><strong>“br”</strong> 标签用于换行<br><strong>“input”</strong> 标签，用于表单控件<br><strong>“button”</strong> 标签，页面按钮<br><strong>”label“</strong> 标签，通常结合input来使用，相当命名标签<br><strong>“select”</strong> 标签，选项标签<br><strong>”textarea“</strong> 标签， 文本区域<br>“<strong>i</strong>” 标签，呈现斜体文本，此外许多框架用它制作页面小图标等<br><strong>“b”</strong> 标签，加粗文本，新的标准出来不推荐使用<br><strong>“em”</strong> 标签，用于将文本进行强调<br>”<strong>strong</strong>“ 标签， 用于将文本进行强调加粗<br><strong>“big”</strong> 标签， 大字体文本<br><strong>”small“</strong> 标签， 小字体文本</p>
-<h3 id="3-常见的行内块级元素"><a href="#3-常见的行内块级元素" class="headerlink" title="3.常见的行内块级元素"></a>3.常见的行内块级元素</h3><blockquote>
-<p>行内块级元素的特征<br>     1. 不自动换行,如果超出父元素(不为行内元素)width则换行<br>     2. 可以设置宽高<br>     3. 在一行内从左到右依次排列</p>
-</blockquote>
-<p>在HTML5中，开发者可以自定义标签，在任意定义标签中，设置display:block属性即可变为块级元素，display:inline就为行内元素，display:inline-block则为行内块级。绝大多数标签都是可以互相转换的。</p>
-<h3 id="4-常见的块级元素"><a href="#4-常见的块级元素" class="headerlink" title="4.常见的块级元素"></a>4.常见的块级元素</h3><blockquote>
-<p>块级元素的特征<br>    1. 可以设置宽高，内外边距等<br>    2. 可以内嵌其他元素（不管是块级的内联的还是行内块级的元素）<br>    3. 独占每个块级元素默认一行，可以自动换行，默认排列方式为从上至下</p>
-</blockquote>
-<ol>
-<li>div - 常用块级容易，也是 css layout 的主要标签</li>
-<li>p - 段落标签主要用于文章段落，多行文字方面</li>
-<li>ul - 无序列表</li>
-<li>ol - 有序列表</li>
-<li>form - 交互表单</li>
-<li>h1~h6 标题标签</li>
-<li>hr - 水平分割线</li>
-<li>dl  - 定义列表</li>
-<li>address - 地址</li>
-<li>blockquote - 块引用</li>
-<li>center - 举中对齐块， 等等其他不常用的标签</li>
-</ol>
-<h3 id="5-HTML5中新增常见的标签以及其语义化-以下顺序不分先后"><a href="#5-HTML5中新增常见的标签以及其语义化-以下顺序不分先后" class="headerlink" title="5. HTML5中新增常见的标签以及其语义化(以下顺序不分先后)"></a>5. HTML5中新增常见的标签以及其语义化(以下顺序不分先后)</h3><ol>
-<li>header  :arrow_up_small:   页眉（网页（部分区域）的头部 顶部 导航区域等等） 块级元素</li>
-<li>nav  :arrow_up_small:   导航链接部分  块级元素</li>
-<li>section  :arrow_up_small:  标签定义网页中的区域（部分）。比如章节、页眉、页脚或文档中的其他部分。块级元素</li>
-<li>article  :arrow_up_small:  内容是引用其他地方的。一个区域中的，另外一部分内容；块级元素</li>
-<li>aside   :arrow_up_small:  和article 是一起使用；是辅助 article 区域的内容。也可以理解为整个网页的 辅助区域</li>
-<li>footer   :arrow_up_small:  页脚（网页（部分区域）的底部|版权区域等等） 块级元素</li>
-<li>audio  :arrow_up_small:    播放声音文件，比如音乐或其它音频流  <strong>行内元素</strong></li>
-<li>video   :arrow_up_small:   播放视频文件，比如电影或其它视频流  <strong>行内元素</strong></li>
-<li>canvas   :arrow_up_small:   定义图形，比如图表和其他图像 有着默认宽高  <strong>行内元素</strong></li>
-<li>hgroup   给标题分组，为标题或者子标题进行分组 块级元素</li>
-<li>figure    对多个元素进行组合 块级元素</li>
-<li>figcaption  定义 figure 元素的标题  块级元素</li>
-<li>output    定义输出的一些类型。</li>
-<li>details    定义元素的细节</li>
-<li>command  定义命令按钮</li>
-<li>summary  为 details 元素定义可见的标题</li>
-<li>mark  主要用来在视觉上向用户呈现那些需要突出的文字   高亮字体</li>
-<li>meter   :arrow_up_small:  标签定义度量衡。仅用于已知最大和最小值的度量。必须定义度量的范围，既可以在元素的文本中，也可以在 min/max 属性中定义。</li>
-<li>progress  定义任何类型的任务的进度   标签运行中的进程。可以使用 progress 标签来显示 JavaScript 中耗费时间的函数的进程</li>
-<li>time        :arrow_up_small:  定义日期或时间，或者两者 <strong>行内元素</strong></li>
-<li>datalist    :arrow_up_small:   定义可选数据的列表。与 input 元素配合使用，就可以制作出输入值的下拉列表  <strong>行内元素</strong></li>
-<li>embed   定义嵌入的内容，比如插件。用来插入各种多媒体，格式可以是MIDI、MP3等  <strong>行内元素</strong> 有默认宽高</li>
-<li>keygen   定义生成密钥</li>
-<li>source    :arrow_up_small:  为媒介元素（比如 video 和 audio）指定多个播放格式与编码，浏览器会自动选择第一个可以识别的格式 <strong>行内元素</strong><br>查看全部标签或者进一步了解这些标签的属性以及如何请移步☞<a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/tags/index.asp</a></li>
-</ol>
-<p><em>版权声明：本文为博主原创文章，转载请注明出处。__<a href="https://github.com/ZhengMaster2020/blogs/issues/1" target="_blank" rel="noopener">https://github.com/ZhengMaster2020/blogs/issues/1</a></em> </p>
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>ECMAScript中存在简单数据类型(或称基本数据类型、原始类型 主要有：<strong>String、Number、Boolean、Null、Undefined</strong>)和复杂的数据类型(或者对象类型<strong>Object</strong>)；后来在ECMAScript中新增了一种数据类型：<strong>Symbol</strong>类型(新的原始数据类型用来防止属性名冲突)。</p>
+<p>ECMAScript变量中包含两种不同的数据类型的值：<strong>基本数据类型和引用数据类型</strong>，而对象的<strong>浅拷贝(shallow copy</strong>)就是复制基本数据的属性，共享引用类型的属性；而<strong>深拷贝(deeep copy)</strong>就是拷贝实例不止是拷贝基本数据类型的属性，还要做到拷贝引用类型(对象、函数、数组)的属性以及它的复制结构(某种意义上来说就是拷贝对象以及此对象的所有子对象)。</p>
+<h3 id="对象的浅拷贝"><a href="#对象的浅拷贝" class="headerlink" title="对象的浅拷贝"></a>对象的浅拷贝</h3><p>关于对象的浅拷贝就是复制对象本身的属性，对于像基本数据类型的属性只是复制一份基本数据类型的属性值给新对象(相当于一份新副本)，而对于引用类型就是复制那份指向内存的地址(指针)，就是原对象与新对象中的引用数据类型属性共同共享内存空间的同一块内存。代码实现对象浅拷贝(只能实现一层的拷贝)如下所示:leftwards_arrow_with_hook:</p>
+<p>`
+<strong>Object.prototype.clone = function(){<br>  const newObj = {};<br>  for (let i in this) {<br>    newObj[i] = this[i];<br>  }<br>  return newObj;<br>}</strong></p>
+<p>const obj = {<br>  name: ‘MokeyCode’,<br>  hobby: [‘football’, ‘swiming’]<br>};</p>
+<p>const newObj = obj.clone();<br>obj.hobby.push(‘Running’)</p>
+<p>console.log(<code>obj.hobby=${obj.hobby}</code>);     //obj.hobby=football,swiming,Running<br>console.log(<code>newObj.hobby=${newObj.hobby}</code>);  //newObj.hobby=football,swiming,Running</p>
+<p>console.log(obj.hobby === newObj.hobby);  //true<br>console.log(obj.name === newObj.name);    //true<br>`</p>
+<h3 id="对象的深拷贝"><a href="#对象的深拷贝" class="headerlink" title="对象的深拷贝"></a>对象的深拷贝</h3><p>深拷贝指的是对象属性所引用的对象全部进行新建对象复制，以保证深复制的对象的引用不包含任何原有对象或对象图上的任何对象，隔离出两个完全不同的对象。通俗地讲就是在原有的一个对象中去复制这个对象的所有类型的属性，不管这个对象嵌套了多少层子对象、数组等引用类型，都一 一给我全部复制出来并赋值一个新对象上。而这个新对象与原对象一毛一样不管是属性名属性值还是数据结构，但这个两个对象不是共享内存中的相同内存地址，彼此相互独立互不干扰，新对象爱咋折腾就咋折腾也丝毫不回干涉到原对象。通常使用递归方式来实现编码，如下:leftwards_arrow_with_hook:</p>
+<p>`
+Object.prototype.clone = function(){<br>  const newObj = {};</p>
+<p>  <strong>for (let i in this) {<br>    if(typeof (this[i]) == ‘object’ || typeof this[i] == ‘function’){<br>       newObj[i] = this[i].clone();<br>    }else{<br>      newObj[i] = this[i];<br>    }<br>  }</strong></p>
+<p>  return newObj;<br>};</p>
+<p>Array.prototype.clone = function(){<br>  const newArray = [];<br>  for(let i=0; i&lt;this.length; i++){<br>    if(typeof (this[i]) == ‘object’ || typeof (this[i]) == ‘function’ ){<br>      newArray[i] = this[i].clone();<br>    }else{<br>      newArray[i] = this[i];<br>    }<br>  }<br>  return newArray;<br>};</p>
+<p>Function.prototype.clone = function(){<br>  let that = this;<br>  const newFun = function(){<br>    return that.apply(this,arguments);<br>  };<br>  for(let i in this){<br>    newFun[i] = this[i];<br>  }<br>  return newFun;</p>
+<p>};</p>
+<p>const obj = {<br>  name: ‘MokeyCode’,<br>  hobby: [‘football’, {innerName: ‘innerObj’}],<br>  showName: function(){<br>    console.log(this.name);<br> }<br>};<br>const newObj = obj.clone();<br>newObj.hobby.push(‘Running’);</p>
+<p>console.log(obj.hobby);<br>console.log(newObj.hobby);</p>
+<p>`
+这种方法对于两个相互引用的对象是是存在问题的，我们使用递归的方法来复制对象而相互相应的对象会让递归一直循环下去，造成类似死循环的情况，而且深拷贝对于十分复杂的嵌套对象来说，是会造成性能的问题，它的时间复杂可能会迅速上升。所以我们能用浅拷贝来解决问题就尽量不要使用深拷贝来实现。有兴趣的同学可以看看jQuery.extend方法是如何实现深浅拷贝。</p>
 
             </div>
             <hr>
@@ -610,7 +578,7 @@
                     </span>
                     <a href="https://zhengmaster2020.github.io" class="b-link-green">ZhengMaster</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/06/0/" class="b-link-green">语义化标签以及常用标签</a>
+                    <a href="/2019/06/06/2/" class="b-link-green">js中对象复制的深浅拷贝问题</a>
                 </p>
             </div>
         </div>
@@ -633,7 +601,8 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/06/06/2/">
                     <div class="card-image">
@@ -647,9 +616,9 @@
                 <div class="card-content article-content">
                     <div class="summary">前言ECMAScript中存在简单数据类型(或称基本数据类型、原始类型 主要有：String、Number、Boolean、Null、Undefined)和复杂的数据类型(或者对象类型Object)；后来在ECMAScript中新增了一种数</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -662,6 +631,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -680,20 +650,17 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/06/1/">
+                <a href="/2019/06/06/0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="es6新特性">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="语义化标签以及常用标签">
                         
-                        <span class="card-title">es6新特性</span>
+                        <span class="card-title">语义化标签以及常用标签</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">##ES6新特性
-1.新增了let、constA. var定义变量的不足之处：没有块级作用域、定义的常量可以做第二次或者多次改动、存在变量提升  
-B. let用来声明一个变量,const用来声明一个常量。
-C. let的特性：块级作用域、</div>
+                    <div class="summary">一开始接触到页面这个东西，毫无疑问大家首页看到的是html这玩意。我对html有了初步的认识是在我大二上数据结构这门课程的时候老师讲课之余就给我们讲讲深度学习，网页设计之类的简单知识。自从那以后就断断续续在W3school以及MDN学习它，</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-06
@@ -702,8 +669,8 @@ C. let的特性：块级作用域、</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ECMAScript/" class="post-category" target="_blank">
-                                    ECMAScript
+                            <a href="/categories/HTML-5-CSS-3/" class="post-category" target="_blank">
+                                    HTML(5)/CSS(3)
                                 </a>
                             
                             
@@ -713,8 +680,8 @@ C. let的特性：块级作用域、</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/es6/" target="_blank">
-                        <span class="chip bg-color">es6</span>
+                    <a href="/tags/HTML-5/" target="_blank">
+                        <span class="chip bg-color">HTML(5)</span>
                     </a>
                     
                 </div>
