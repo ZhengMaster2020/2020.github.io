@@ -4,11 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js中变量，变量作用域，以及类型检查, hexo blog 个人博客  JavaScript 前端工程师">
-    <meta name="description" content="变量、局部变量与全局变量
-JavaScript 变量是存储数据值的容器， 在以前的版本通常是使用var来声明一个变量
-
-js中的变量可以分为局部变量(local variable )和全局变量(global variable ),全局变量是">
+    <meta name="keywords" content="js中函数的常用方法, hexo blog 个人博客  JavaScript 前端工程师">
+    <meta name="description" content="js中函数的常用方法 | ZhengMaster">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js中变量，变量作用域，以及类型检查 | ZhengMaster</title>
+    <title>js中函数的常用方法 | ZhengMaster</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -282,13 +279,13 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js中变量，变量作用域，以及类型检查
+                        js中函数的常用方法
                     </div>
                 </div>
             </div>
@@ -380,8 +377,8 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数据类型/" target="_blank">
-                                <span class="chip bg-color">数据类型</span>
+                            <a href="/tags/js函数/" target="_blank">
+                                <span class="chip bg-color">js函数</span>
                             </a>
                         
                     </div>
@@ -404,7 +401,7 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-08
+                    2019-06-10
                 </div>
 
                 
@@ -420,53 +417,7 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="变量、局部变量与全局变量"><a href="#变量、局部变量与全局变量" class="headerlink" title="变量、局部变量与全局变量"></a>变量、局部变量与全局变量</h3><ul>
-<li><p>JavaScript 变量是存储数据值的容器， 在以前的版本通常是使用<strong>var</strong>来声明一个变量</p>
-</li>
-<li><p>js中的变量可以分为<strong>局部变量</strong>(local variable )和<strong>全局变量</strong>(global variable ),全局变量是所有对象函数数组等数据类型无论在什么时候都可以访问得到这个全局变量，而局部变量一般只有在一定的范围内才可以访问得到，js中通常是在一个函数内定义一个变量就是局部变量，这个变量可以在这个函数内的其他位置都可以访问得到，但是函数外部却不能直接访问得到函数内部变量，也就是函数内部的变量对函数外来说的不可见的。</p>
-</li>
-<li><p>一般没有使用<strong>var</strong>关键字来声明的变量都是作为全局变量，在客户端的js中全局变量都可以通过<strong>window</strong>对象来访问得到这变量，而这个全局变量其实也是window对象的属性而存在的。</p>
-</li>
-</ul>
-<h3 id="变量作用域以及作用域链"><a href="#变量作用域以及作用域链" class="headerlink" title="变量作用域以及作用域链"></a>变量作用域以及作用域链</h3><ul>
-<li><p>ECMAScript2015版本以前都是没有块级作用域的说法，但是ECMAScript2015(民间俗称es6)出来以后引入了<strong>let</strong>与<strong>const</strong>这两个关键字可以实现块级作用域的效果。所谓的块级作用域就是一个<strong>{}</strong>来作为作用域的分界线，大括号外面的其他程序访问不了大括号里面变量等</p>
-</li>
-<li><p>任何变量（函数也视为变量），如果没有在当前函数作用域中找到，就会继续往上查找，最后如果在全局作用域中也没有找到，则报ReferenceError错误</p>
-</li>
-<li><p>如果两个不同的函数各自申明了同一个变量，那么该变量只在各自的函数体内起作用。换句话说，不同函数内部的同名变量互相独立，互不影响</p>
-</li>
-<li><p>js的变量作用域是<strong>基于作用域链</strong>的，就是如果其他程序需要用到这个变量，但是却在函数、对象等内部的变量却找不到这个变量，它就会一层一层往外找，查找其他地方是否有这么一个变量，如果有就使用这个变量，倘若一直查找到最顶层都没有这个变量就返回<strong>Undefined</strong></p>
-</li>
-<li><p>变量的作用域可以是全局作用域、函数作用域和块级作用域，js变量会存在<strong>变量声明提升</strong>这个问题，以及在for进行循环时它是不能拥有块级作用域的，所以可以使用es6的<strong>let</strong>来声明循环变量</p>
-</li>
-</ul>
-<h3 id="js的数据类型以及它们的类型检查"><a href="#js的数据类型以及它们的类型检查" class="headerlink" title="js的数据类型以及它们的类型检查"></a>js的数据类型以及它们的类型检查</h3><ul>
-<li>js的数据类型(<strong>7种</strong>)可以分为基本数据类型和引用数据类型，其中基本数据类型可以分为以下5大类</li>
-</ul>
-<p><strong>Number、Boolean、String、Null、Undefined、Symbol</strong>，而引用类型是<strong>Object</strong>（而Object又包括有Array、Function、RegExp、Date</p>
-<ul>
-<li><p>Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值</p>
-</li>
-<li><p>基本数据类型的变量值存储在内存栈中，引用类型的变量值存储在内存堆中</p>
-</li>
-<li><p>undefined 这个值表示变量不含有值。可以通过将变量的值设置为 null 来清空变量，null表示一个“空”的值。例如Java也用null，Swift用nil，Python用None表示。但是，在JavaScript中，还有一个和null类似的undefined，它表示“未定义”。JavaScript的设计者希望用null表示一个空的值，而undefined表示值未定义。null的值之前有过，但现在没有了为空；而undefined一开始就不存在，都没有诞生过，值从何而来。</p>
-</li>
-</ul>
-<h3 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h3><ul>
-<li><ol>
-<li>使用*<em>typeof *</em>操作符来检验基本数据类和Object，返回一个表示数据类型的字符串，返回结果包括：number、string、boolean、object、undefined、function。</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>typeof可以对基本类型number、string  、boolean、undefined做出准确的判断（null除外，typeof null===“object”，这是由于历史的原因，而对于引用类型，除了function之外返回的都是object。但当我们需要知道某个对象的具体类型时，typeof就显得有些力不从心了）</li>
-</ol>
-</li>
-<li><ol start="3">
-<li><strong>instanceof</strong>  当我们需要知道某个对象的具体类型时,可以用运算符 instanceof，instanceof操作符判断左操作数对象的原型链上是否有右边这个构造函数的prototype属性，也就是说指定对象是否是某个构造函数的实例，最后返回布尔值</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">instanceof (A,B) = &#123;</span><br><span class="line">    var L = A.__proto__;</span><br><span class="line">    var R = B.prototype;</span><br><span class="line">    if(L === R) &#123;</span><br><span class="line">        // A的内部属性 __proto__ 指向 B 的原型对象</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                
             </div>
             <hr>
 
@@ -606,7 +557,7 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
                     </span>
                     <a href="https://zhengmaster2020.github.io" class="b-link-green">ZhengMaster</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/08/3/" class="b-link-green">js中变量，变量作用域，以及类型检查</a>
+                    <a href="/2019/06/10/4/" class="b-link-green">js中函数的常用方法</a>
                 </p>
             </div>
         </div>
@@ -629,7 +580,8 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/06/10/4/">
                     <div class="card-image">
@@ -643,9 +595,9 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
                 <div class="card-content article-content">
                     <div class="summary"></div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -658,6 +610,7 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -676,20 +629,23 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/06/2/">
+                <a href="/2019/06/08/3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="js中对象复制的深浅拷贝问题">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="js中变量，变量作用域，以及类型检查">
                         
-                        <span class="card-title">js中对象复制的深浅拷贝问题</span>
+                        <span class="card-title">js中变量，变量作用域，以及类型检查</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">前言ECMAScript中存在简单数据类型(或称基本数据类型、原始类型 主要有：String、Number、Boolean、Null、Undefined)和复杂的数据类型(或者对象类型Object)；后来在ECMAScript中新增了一种数</div>
+                    <div class="summary">变量、局部变量与全局变量
+JavaScript 变量是存储数据值的容器， 在以前的版本通常是使用var来声明一个变量
+
+js中的变量可以分为局部变量(local variable )和全局变量(global variable ),全局变量是</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-08
                             </span>
                         <span class="publish-author">
                             
@@ -706,8 +662,8 @@ js中的变量可以分为局部变量(local variable )和全局变量(global va
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/数据类型/" target="_blank">
+                        <span class="chip bg-color">数据类型</span>
                     </a>
                     
                 </div>
