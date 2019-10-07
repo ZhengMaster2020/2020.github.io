@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ZhengMaster的博客">
+    <meta name="keyword" content="hexo bolg 个人博客">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        HTTP协议以及网络缓存和安全 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>ZhengMaster</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2019-javaScript-常见设计模式最新总结大全"><span class="toc-text">2019 javaScript 常见设计模式最新总结大全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-单例模式"><span class="toc-text">1. 单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-观察者模式"><span class="toc-text">2. 观察者模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-发布订阅模式"><span class="toc-text">3. 发布订阅模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-代理模式模式"><span class="toc-text">4. 代理模式模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-装饰者模式"><span class="toc-text">5. 装饰者模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-中介者模式"><span class="toc-text">6. 中介者模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-迭代器模式"><span class="toc-text">7. 迭代器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-职责链模式"><span class="toc-text">8. 职责链模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-命令模式"><span class="toc-text">9. 命令模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-组合模式"><span class="toc-text">10. 组合模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设计原则"><span class="toc-text">设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单一职责原则"><span class="toc-text">单一职责原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最少知识原则"><span class="toc-text">最少知识原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开放封闭原则"><span class="toc-text">开放封闭原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口面向以及面向接口编程原则"><span class="toc-text">接口面向以及面向接口编程原则</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        HTTP协议以及网络缓存和安全
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-08-06 08:02:26</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#HTTP 网络安全 缓存" title="HTTP 网络安全 缓存">HTTP 网络安全 缓存</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="2019-javaScript-常见设计模式最新总结大全"><a href="#2019-javaScript-常见设计模式最新总结大全" class="headerlink" title="2019 javaScript 常见设计模式最新总结大全"></a>2019 javaScript 常见设计模式最新总结大全</h1><p>对于每一种设计模式，我们都应要搞清楚一下4点方面的内容，才能对设计模式每个模式有个总体认识</p>
+<blockquote>
+<p>1、它的定义<br>2、它的出现解决了什么问题<br>3、怎么用，应用场景<br>4、优缺点或者局限性</p>
+</blockquote>
+<h2 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1. 单例模式"></a>1. 单例模式</h2><p><strong>定义：</strong> 单例单例，单个实例，顾名思义就是创建单个类的实例，并且只提供一个全局接口来访问这个实例   </p>
+<p>把描述同一事物（同一个对象）的属性和方法放在一个内存空间下，起到了分组的作用，这样不同事物之间的属性即使属性名相同，相互也不会冲突。这种分组编写代码的模式叫做“单例模式”。</p>
+<p><strong>使用场景：</strong></p>
+<ul>
+<li>对于某些场景来说，在全局下，我们只需要一个对象来完成我们任务</li>
+<li>例如： 登录弹窗（无论点击多少次都是弹出一个对话框）、 常见的浏览器window对象等  </li>
+</ul>
+<p><strong>优缺点：</strong>   </p>
+<p>优点：   </p>
+<ul>
+<li>提供了对唯一实例的受控访问。 </li>
+<li>避免对共享资源的多重占用</li>
+<li>保持全局命名空间的整洁</li>
+<li>优化代码结构：相关的方法和属性集中在一个地方，且只会实例化一次。简化了代码的调试和维护</li>
+<li>划分命名空间，减少全局变量，组织代码为一体，便于阅读维护</li>
+<li>防止其它对象对单例对象的实例化，确保所有的对象都访问一个实例 </li>
+<li>由于在内存只存在一个对象，节省了系统资源，当调用的对象需要频繁的创建和销毁的时候，提高系统的性能</li>
+</ul>
+<p>缺点：  </p>
+<ul>
+<li>不适用于变化的对象当中，如果同一类型的对象总是要在不同的用例场景发生变化，单例就会引起数据的错误，不能保存彼此的状态。 </li>
+<li>单例类的职责过重，在一定程度上违背了“单一职责原则”</li>
+<li>滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的程序过多而出现连接池溢出；如果实例化的对象长时间不被利用，系统会认为是垃圾而被回收，这将导致对象状态的丢失。 </li>
+<li>可能导致模块间的强耦合，从而不利于单元测试。无法单独测试一个调用了来自单例的方法的类，而只能把它与那个单例作为一个单元一起测试。</li>
+</ul>
+<p><strong>解决的问题</strong>  </p>
+<p>一个全局使用的类频繁的创建与销毁。对象创建的问题</p>
+<p><strong>何时使用</strong>  </p>
+<p>想控制实例数目，节省系统资源的时候。</p>
+<p><strong>如何解决</strong>  </p>
+<p>判断系统是否已经有这个单例，如果有则返回，如果没有则创建。</p>
+<p><strong>代码实现单例模式</strong></p>
+<ul>
+<li>简单的单例模式实现：</li>
+</ul>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">const</span> SingleTon = <span class="function"><span class="keyword">function</span> (<span class="params">username, password</span>) </span>&#123;</span><br><span class="line">&gt;   <span class="keyword">this</span>.username = username</span><br><span class="line">&gt;   <span class="keyword">this</span>.password = password</span><br><span class="line">&gt;   <span class="keyword">this</span>.instance = <span class="literal">null</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; SingleTon.prototype.getUsername = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">&gt;   alert(<span class="keyword">this</span>.username)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; SingleTon.getInstance = <span class="function"><span class="keyword">function</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">&gt;   <span class="keyword">if</span> (!<span class="keyword">this</span>.instance) &#123;</span><br><span class="line">&gt;     <span class="keyword">this</span>.instance = <span class="keyword">new</span> SingleTon(username)</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt;   <span class="keyword">return</span> <span class="keyword">this</span>.instance</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="keyword">const</span> user1 = SingleTon.getInstance(<span class="string">'zhangsan'</span>)</span><br><span class="line">&gt; <span class="keyword">const</span> user2 = SingleTon.getInstance(<span class="string">'lisi'</span>)</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="built_in">console</span>.log( user1 === user2 )</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>以上代码是实现了一个标准的代理模式，但是这种方式创建的单例我们并不能向其他对象一样使用new关键字来创建一个实例，只能通过调用构造函数·<code>ingleTon.getInstance方法</code>来创建单例。增加了这个SingleTon类的不透明性，当我们调用SingleTon的时候必须知道，这是一个单例类。所以我们要针对以上代码进行升级，实现一个“透明”的单例类，使的用户能够通过<code>new XXX</code>的方式来创建类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>代理实现单例模式</li>
+<li>惰性单例</li>
+</ul>
+<p>（待续。。。）</p>
+<h2 id="2-观察者模式"><a href="#2-观察者模式" class="headerlink" title="2. 观察者模式"></a>2. 观察者模式</h2><h2 id="3-发布订阅模式"><a href="#3-发布订阅模式" class="headerlink" title="3. 发布订阅模式"></a>3. 发布订阅模式</h2><h2 id="4-代理模式模式"><a href="#4-代理模式模式" class="headerlink" title="4. 代理模式模式"></a>4. 代理模式模式</h2><h2 id="5-装饰者模式"><a href="#5-装饰者模式" class="headerlink" title="5. 装饰者模式"></a>5. 装饰者模式</h2><h2 id="6-中介者模式"><a href="#6-中介者模式" class="headerlink" title="6. 中介者模式"></a>6. 中介者模式</h2><h2 id="7-迭代器模式"><a href="#7-迭代器模式" class="headerlink" title="7. 迭代器模式"></a>7. 迭代器模式</h2><h2 id="8-职责链模式"><a href="#8-职责链模式" class="headerlink" title="8. 职责链模式"></a>8. 职责链模式</h2><h2 id="9-命令模式"><a href="#9-命令模式" class="headerlink" title="9. 命令模式"></a>9. 命令模式</h2><h2 id="10-组合模式"><a href="#10-组合模式" class="headerlink" title="10. 组合模式"></a>10. 组合模式</h2><hr>
+<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><h3 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h3><h3 id="最少知识原则"><a href="#最少知识原则" class="headerlink" title="最少知识原则"></a>最少知识原则</h3><h3 id="开放封闭原则"><a href="#开放封闭原则" class="headerlink" title="开放封闭原则"></a>开放封闭原则</h3><h3 id="接口面向以及面向接口编程原则"><a href="#接口面向以及面向接口编程原则" class="headerlink" title="接口面向以及面向接口编程原则"></a>接口面向以及面向接口编程原则</h3>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://github.com/ZhengMaster2020/ZhengMaster2020.github.io">ZhengMaster</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud"> Pure Theme</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
