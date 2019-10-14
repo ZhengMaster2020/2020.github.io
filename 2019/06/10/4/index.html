@@ -11,7 +11,7 @@
 
     <title>
         
-        js中函数的常用方法 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
+        js中数组/对象的常用方法总结 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
         
     </title>
 
@@ -56,32 +56,32 @@
             <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
-                    <span>HOME</span>
+                    <span>主页</span>
                 </a>
             </li>
             <li>
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
-                    <span>TAGS</span>
+                    <span>标签</span>
                 </a>
             </li>
             <li>
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
-                    <span>ARCHIVES</span>
+                    <span>存档</span>
                 </a>
             </li>
             <li>
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
-                    <span>ABOUT</span>
+                    <span>关于</span>
                 </a>
             </li>
             
             <li>
                 <a id="search">
                     <i class="iconfont icon-sousuo1"></i>
-                    <span>SEARCH</span>
+                    <span>搜索</span>
                 </a>
             </li>
             
@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-创建数组的方法"><span class="toc-text">1、  创建数组的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-检查一个变量是否为数组"><span class="toc-text">2、 检查一个变量是否为数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-数组转为字符串"><span class="toc-text">3、 数组转为字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、-数组的插入与删除元素"><span class="toc-text">4、 数组的插入与删除元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、-数组的遍历方法"><span class="toc-text">5、 数组的遍历方法</span></a></li></ol>
 </div>
     
 </div>
@@ -100,7 +100,7 @@
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
             <input id="search-input">
-            <span id="begin-search">search</span>
+            <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
 
@@ -120,25 +120,61 @@
 
 <div class="post-container">
     <div class="post-title">
-        js中函数的常用方法
+        js中数组/对象的常用方法总结
     </div>
 
     <div class="post-meta">
-        <span class="attr">Post：<span>2019-06-10 14:16:27</span></span>
+        <span class="attr">发布于：<span>2019-06-10 14:16:27</span></span>
         
-        <span class="attr">Tags：/
+        <span class="attr">标签：/
         
         <a class="tag" href="/tags/#js函数" title="js函数">js函数</a>
         <span>/</span>
         
         
         </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
 
     </div>
     <div class="post-content ">
-        
+        <h3 id="1、-创建数组的方法"><a href="#1、-创建数组的方法" class="headerlink" title="1、  创建数组的方法"></a>1、  创建数组的方法</h3><ul>
+<li>通过new 的数组构造函数的方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr =  <span class="keyword">new</span> <span class="built_in">Array</span>()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过数组的字面量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = []</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、-检查一个变量是否为数组"><a href="#2、-检查一个变量是否为数组" class="headerlink" title="2、 检查一个变量是否为数组"></a>2、 检查一个变量是否为数组</h3><ul>
+<li>instanceof </li>
+<li>Array.isArray()</li>
+</ul>
+<h3 id="3、-数组转为字符串"><a href="#3、-数组转为字符串" class="headerlink" title="3、 数组转为字符串"></a>3、 数组转为字符串</h3><ul>
+<li>toString()</li>
+</ul>
+<h3 id="4、-数组的插入与删除元素"><a href="#4、-数组的插入与删除元素" class="headerlink" title="4、 数组的插入与删除元素"></a>4、 数组的插入与删除元素</h3><ul>
+<li><p>push()  –&gt;  添加到数组末尾，返回新数组的长度</p>
+</li>
+<li><p>unshift() –&gt; 从数组的头部开始插入元素， 返回新数组的长度</p>
+</li>
+<li><p>pop() –&gt;  删除数组的尾部的元素， 返回删除项</p>
+</li>
+<li><p>shift() –&gt; 删除数组的头部元素，返回删除项</p>
+</li>
+<li><p><strong>splice(index, deleteCount, addItems)</strong>  –&gt; 删除或者替换元素，或者在位置新增加元素   <strong>改变原数组</strong></p>
+<ul>
+<li>index: 选中要操作的元素的位置， 从0开始</li>
+<li>deleteCount： 要输出的个数</li>
+<li>addItems: 从index的位置要新增的元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> students = [<span class="string">'zhangsan'</span>, <span class="string">'lisi'</span>, <span class="string">'wangwu'</span>, <span class="string">'gouliu'</span>]</span><br><span class="line"><span class="comment">// 删除lisi</span></span><br><span class="line">students.splice(<span class="number">1</span>, <span class="number">1</span>)  <span class="comment">//返回一个包含删除项的数组</span></span><br><span class="line"><span class="built_in">console</span>.log(student)<span class="comment">// ["zhangsan", "wangwu", "gouliu"]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5、-数组的遍历方法"><a href="#5、-数组的遍历方法" class="headerlink" title="5、 数组的遍历方法"></a>5、 数组的遍历方法</h3>
         
         <br>
         <div id="comment-container">
