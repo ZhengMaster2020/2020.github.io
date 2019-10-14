@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-浏览器渲染页面的大致流程"><span class="toc-text">1. 浏览器渲染页面的大致流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-浏览器渲染页面的大致流程"><span class="toc-text">1. 浏览器渲染页面的大致流程</span></a></li></ol>
 </div>
     
 </div>
@@ -167,10 +167,36 @@
 </ul>
 <p><img src="https://bitsofco.de/content/images/2017/01/DOM.png" alt="img not found"></p>
 <p>关于HTML的一件好事是它可以部分执行。无需加载完整的文档即可使内容开始出现在页面上。</p>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
-<li><a href="https://imweb.io/topic/56841c864c44bcc56092e3fa" target="_blank" rel="noopener">浏览器渲染原理</a></li>
+<ul>
+<li><p><strong>构建CSSOM</strong></p>
+<p>1、DOM会捕获页面的内容，但浏览器还需要知道页面如何展示，所以需要构建CSSOM。</p>
+<p>构建CSSOM的过程与构建DOM的过程非常相似，当浏览器接收到一段CSS，浏览器首先要做的是识别出Token，然后构建节点并生成CSSOM。</p>
+<p>2、CSS被视为<strong>“渲染阻止资源</strong>”。这意味着如果不首先完全解析资源，就无法构建渲染树（参见下文）。与HTML不同，由于CSS具有继承级联性质，因此不能部分使用CSS。稍后在文档中定义的样式可以覆盖和更改先前定义的样式。因此，如果在解析整个样式表之前开始使用样式表中较早定义的CSS样式，则可能会遇到应用了错误CSS的情况。这意味着，在我们进入下一阶段之前，必须对CSS进行完全解析。CSS文件仅适用于当前设备，才被视为渲染阻止。&lt;link rel =“ stylesheet”&gt;标记可以接受media属性，在该属性中，我们可以指定适用于其中样式的任何媒体查询。例如，如果我们有一个样式表，其媒体属性为direction：landscape，并且我们正在以纵向模式查看页面，则该资源将不被视为渲染阻止。CSS也可以是“<strong>脚本阻止</strong>”。这是因为JavaScript文件必须等待CSSOM构造完成后才能运行。</p>
+<p>3、JavaScript被认为是<strong>“parser blocking resource（解析器阻止资源）”</strong>。这意味着HTML文档本身的解析被JavaScript阻止。当解析器到达<script>标记时，无论是内部标记还是外部标记，它都会停止获取（如果是外部标记）并运行它。这就是为什么，如果我们有一个JavaScript文件引用了文档中的元素，则必须将其放在该文档的外观之后。为了避免JavaScript被解析器阻止，可以通过应用<strong>async</strong>属性异步加载它。<strong>（<a href="https://segmentfault.com/q/1010000000640869">js文件的异步加载 defer 与 async？</a>）</strong></p>
+</li>
 </ul>
-
+<ul>
+<li><p><strong>构建渲染树</strong></p>
+<p>当我们生成 DOM 树和 CSSOM 树以后，就需要将这两棵树组合为渲染树。</p>
+<p><img src="https://image.fundebug.com/2019-01-03-6.png" alt="img not found"></p>
+<ul>
+<li><strong>布局与绘制</strong></li>
+</ul>
+<p>当浏览器生成渲染树以后，就会根据渲染树来进行布局（也可以叫做回流）。这一阶段浏览器要做的事情是要弄清楚各个节点在页面中的确切位置和大小。通常这一行为也被称为“自动重排”。</p>
+<p>布局流程的输出是一个“盒模型”，它会精确地捕获每个元素在视口内的确切位置和尺寸，所有相对测量值都将转换为屏幕上的绝对像素。</p>
+<p>布局完成后，浏览器会立即发出“Paint Setup”和“Paint”事件，将渲染树转换成屏幕上的像素。</p>
+<p>在生成布局的这个过程中会发生<strong>回流</strong>和<strong>重绘</strong>，这是一个非常重要的知识点。</p>
+</li>
+</ul>
+<h3 id="2、页面重绘与回流"><a href="#2、页面重绘与回流" class="headerlink" title="2、页面重绘与回流"></a>2、页面重绘与回流</h3><ul>
+<li>什么是重绘，什么是回流？</li>
+<li>什么情况下会触发重绘或者回流？</li>
+<li>彼此二者的优化方法有哪些？</li>
+</ul>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="https://imweb.io/topic/56841c864c44bcc56092e3fa">浏览器渲染原理</a></li>
+</ul>
+</script></p></li></ul>
         
         <br>
         <div id="comment-container">
