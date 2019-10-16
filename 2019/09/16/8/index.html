@@ -11,7 +11,7 @@
 
     <title>
         
-        about - ZhengMaster的博客 | Zhengmaster&#39;s Blog
+        JavaScript现实Promise对象 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
         
     </title>
 
@@ -71,7 +71,7 @@
                     <span>ARCHIVES</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>ABOUT</span>
@@ -87,6 +87,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-Promise的定义"><span class="toc-text">1、 Promise的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-Promise对象的介绍"><span class="toc-text">2、 Promise对象的介绍</span></a></li></ol>
+</div>
     
 </div>
 
@@ -112,38 +116,42 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-content ">
-    <blockquote>
-<p>20出头的年纪是用来脱贫的，而不是用来脱单的；在这个世界富人千姿百态，而穷人却大致相同。</p>
-</blockquote>
-<ul>
-<li>关于本站：<ul>
-<li>不定期发布技术相关的内容</li>
-<li>发表的文章多属于自己的理解，如有错误请及时指出，以免贻误他人</li>
-<li>如果我的文章能帮到你，我会非常的开心</li>
-</ul>
-</li>
-<li>关于我：<ul>
-<li>计算机科学与技术专业本科在读</li>
-<li>前端入坑已经一年多了</li>
-</ul>
-</li>
-<li>作品：<ul>
-<li>文章管理系统</li>
-</ul>
-</li>
-<li>其他：<ul>
-<li>GitHub: <a href="https://github.com/ZhengMaster2020" target="_blank" rel="noopener">https://github.com/ZhengMaster2020</a></li>
-<li>思否：<a href="https://segmentfault.com/u/zhengmaster2020" target="_blank" rel="noopener">https://segmentfault.com/u/zhengmaster2020</a></li>
-<li>邮箱： <a href="mailto:2105195274@qq.com" target="_blank" rel="noopener">2105195274@qq.com</a>/zhengmaster668@168.com</li>
-</ul>
-</li>
-</ul>
 
-    
-    <div id="comment-container">
+
+<div class="post-container">
+    <div class="post-title">
+        JavaScript现实Promise对象
     </div>
-    <div id="lv-container">
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-09-16 21:09:29</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#ECMAScript es6" title="ECMAScript es6">ECMAScript es6</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h3 id="1、-Promise的定义"><a href="#1、-Promise的定义" class="headerlink" title="1、 Promise的定义"></a>1、 Promise的定义</h3><p><code>promise</code>是一个包含异步操作结果的对象，它有三个状态：<code>等待状态: pending</code>、<code>执行状态: fulfilled</code>、<code>拒绝状态：rejected</code>，状态一旦改变就不可逆，状态只能从pending转换为fulfilled，或者从pending转换为rejected。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, rejected</span>) =&gt;</span> &#123;</span><br><span class="line">    resolve(<span class="string">'value'</span>)</span><br><span class="line">    rejected(<span class="string">'reason'</span>)</span><br><span class="line">&#125;).then(<span class="function">(<span class="params">val</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val)</span><br><span class="line">&#125;, (rea) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(rea)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、-Promise对象的介绍"><a href="#2、-Promise对象的介绍" class="headerlink" title="2、 Promise对象的介绍"></a>2、 Promise对象的介绍</h3><p>Promise对象接受一个执行函数作为参数，这个参数函数又存在两个参数作为回调函数，resolve 成功时执行的函数，rejected失败执行的函数。</p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
 </div>
 
@@ -185,7 +193,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.xml"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
