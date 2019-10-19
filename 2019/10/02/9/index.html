@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5新特性"><span class="toc-text">HTML5新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、-新的语义标签"><span class="toc-text">1、 新的语义标签</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2、-增强型表单"><span class="toc-text">2、 增强型表单</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5新特性"><span class="toc-text">HTML5新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、-新的语义标签"><span class="toc-text">1、 新的语义标签</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2、-增强型表单"><span class="toc-text">2、 增强型表单</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS多种方式清楚浮动"><span class="toc-text">CSS多种方式清楚浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS多种方式实现水平垂直居中"><span class="toc-text">CSS多种方式实现水平垂直居中</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1、实现水平垂直居中"><span class="toc-text">1、实现水平垂直居中</span></a></li></ol></li>
 </div>
     
 </div>
@@ -138,7 +138,48 @@
 
     </div>
     <div class="post-content ">
-        <h3 id="HTML5新特性"><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h3><h5 id="1、-新的语义标签"><a href="#1、-新的语义标签" class="headerlink" title="1、 新的语义标签"></a>1、 新的语义标签</h5><h6 id="2、-增强型表单"><a href="#2、-增强型表单" class="headerlink" title="2、 增强型表单"></a>2、 增强型表单</h6>
+        <h3 id="HTML5新特性"><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h3><h6 id="1、-新的语义标签"><a href="#1、-新的语义标签" class="headerlink" title="1、 新的语义标签"></a>1、 新的语义标签</h6><h6 id="2、-增强型表单"><a href="#2、-增强型表单" class="headerlink" title="2、 增强型表单"></a>2、 增强型表单</h6><h3 id="CSS多种方式清楚浮动"><a href="#CSS多种方式清楚浮动" class="headerlink" title="CSS多种方式清楚浮动"></a>CSS多种方式清楚浮动</h3><ul>
+<li>浮动元素会脱离文档流，并向左或者向右浮动，直到碰到父元素或者另一个浮动元素</li>
+<li>浮动会导致父元素高度崩塌</li>
+</ul>
+<p>清楚浮动的方法：</p>
+<ul>
+<li><p>clear –&gt; 在被清除元素的上下边添加足够的清楚空间（通过伪元素实现清楚浮动）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 现代浏览器clearfix方案</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">	<span class="attribute">display</span>: table</span><br><span class="line">	content: <span class="string">""</span></span><br><span class="line">	clear: both</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 全浏览器通用方案</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: table</span><br><span class="line">    content: <span class="string">""</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>:both</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom:1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+<ul>
+<li>BFC(块格式化上下文) –&gt; </li>
+</ul>
+<h3 id="CSS多种方式实现水平垂直居中"><a href="#CSS多种方式实现水平垂直居中" class="headerlink" title="CSS多种方式实现水平垂直居中"></a>CSS多种方式实现水平垂直居中</h3><h6 id="1、实现水平垂直居中"><a href="#1、实现水平垂直居中" class="headerlink" title="1、实现水平垂直居中"></a>1、实现水平垂直居中</h6><ul>
+<li><p>元素定宽高</p>
+<p>1、 absolute + 负margin (兼容性最好)</p>
+<p>2、 absolute + auto </p>
+<p>3、 absolute + calc（css3新增的计算属性）</p>
+</li>
+<li><p>元素不定宽高</p>
+<p>1、 flex布局  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2、grid布局</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: grid;//父元素</span><br><span class="line"><span class="selector-tag">align-self</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">justify-self</span><span class="selector-pseudo">:center</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>  3、 absolute + transform</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//例子</span><br><span class="line"><span class="selector-class">.parent</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  4、 line-height（行内元素）</p>
+<p>  5、 css-table(css3 新增的table属性，兼容性比较好)</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table-cell</span></span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;</span><br></pre></td></tr></table></figure>
+
+
         
         <br>
         <div id="comment-container">
