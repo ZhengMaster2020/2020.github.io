@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ZhengMaster的博客">
+    <meta name="keyword" content="hexo bolg 个人博客">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        前端知识-CSS基础知识 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>ZhengMaster</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端日常开发碰到的CSS基础问题"><span class="toc-text">前端日常开发碰到的CSS基础问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-CSS的常见布局"><span class="toc-text">1.  CSS的常见布局</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-CSS的盒子模型"><span class="toc-text">2. CSS的盒子模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-CSS的选择器以及权重"><span class="toc-text">3. CSS的选择器以及权重</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-CSS3新特性-Link"><span class="toc-text">4. CSS3新特性 Link</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-可继承属性"><span class="toc-text">5. 可继承属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-display与position属性"><span class="toc-text">6. display与position属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-元素的水平垂直居中"><span class="toc-text">7. 元素的水平垂直居中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-清楚浮动的常见方法"><span class="toc-text">8. 清楚浮动的常见方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-BFC（块格式化上下文）"><span class="toc-text">9. BFC（块格式化上下文）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-CSS常见单位"><span class="toc-text">10. CSS常见单位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-CSS的预处理器"><span class="toc-text">11. CSS的预处理器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#12-CSS的伪类与伪元素"><span class="toc-text">12. CSS的伪类与伪元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#13-CSS的1像素问题"><span class="toc-text">13. CSS的1像素问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#14-CSS的性能优化"><span class="toc-text">14. CSS的性能优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#15-浏览器的重绘-repaint-与回流-reflow"><span class="toc-text">15. 浏览器的重绘(repaint)与回流(reflow)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#16-多行文本省略号的实现方案"><span class="toc-text">16. 多行文本省略号的实现方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#17-页面的响应式设计与自适应设计"><span class="toc-text">17. 页面的响应式设计与自适应设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#18-移动端页面适配问题"><span class="toc-text">18. 移动端页面适配问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#参考文章："><span class="toc-text">参考文章：</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        前端知识-CSS基础知识
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-01-11 20:29:29</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#css 面试 知识" title="css 面试 知识">css 面试 知识</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="前端日常开发碰到的CSS基础问题"><a href="#前端日常开发碰到的CSS基础问题" class="headerlink" title="前端日常开发碰到的CSS基础问题"></a>前端日常开发碰到的CSS基础问题</h2><h5 id="1-CSS的常见布局"><a href="#1-CSS的常见布局" class="headerlink" title="1.  CSS的常见布局"></a>1.  CSS的常见布局</h5><p><img src="https://user-gold-cdn.xitu.io/2017/8/21/395302ae7949d78570a6102e5ded1ff0?imageslim" alt="css常见布局"></p>
+<ul>
+<li>flex布局（日常开发中用得最为频繁的布局）</li>
+<li>grid布局（网格布局，主流浏览器兼容性差）</li>
+<li>定位布局（基于position的relative与absolute进行布局）</li>
+<li>浮动流布局 （基于float属性）</li>
+<li>文档流布局（基于div元素）</li>
+<li>圣杯布局</li>
+<li>双飞燕布局</li>
+<li>水平垂直居中布局</li>
+</ul>
+<h5 id="2-CSS的盒子模型"><a href="#2-CSS的盒子模型" class="headerlink" title="2. CSS的盒子模型"></a>2. CSS的盒子模型</h5><ul>
+<li>标准盒子模型</li>
+<li>IE盒子模型</li>
+</ul>
+<h5 id="3-CSS的选择器以及权重"><a href="#3-CSS的选择器以及权重" class="headerlink" title="3. CSS的选择器以及权重"></a>3. CSS的选择器以及权重</h5><ul>
+<li>css解析规则（css选择器是<strong>从右到左，从上到下</strong>进行解析）</li>
+<li>优先级计算规则<ul>
+<li>最近的祖先样式比其他祖先样式优先级高</li>
+<li>“直接样式”比”祖先样式”优先级高</li>
+<li><strong>内联样式 &gt; ID 选择器 （权重100）&gt; 类选择器 （权重10）= 属性选择器 = 伪类选择器 &gt; 标签选择器 （权重1）= 伪元素选择器</strong></li>
+<li><strong>!important</strong> 拥有最高优先级，!important 比内联优先级高</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-CSS3新特性-Link"><a href="#4-CSS3新特性-Link" class="headerlink" title="4. CSS3新特性 Link"></a>4. CSS3新特性 <a href="https://juejin.im/post/5a0c184c51882531926e4294#heading-1" target="_blank" rel="noopener">Link</a></h5><ul>
+<li><p>过渡</p>
+<p> (transition： CSS属性，花费时间，效果曲线(默认ease)，延迟时间(默认0)</p>
+</li>
+</ul>
+<ul>
+<li><p>动画</p>
+<p>animation：动画名称，一个周期花费时间，运动曲线（默认ease），动画延迟（默认0），播放次数（默认1），是否反向播放动画（默认normal），是否暂停动画（默认running））</p>
+</li>
+</ul>
+<ul>
+<li><p>形状变换</p>
+<p>transform: rotate(30deg)</p>
+</li>
+</ul>
+<ul>
+<li><p>新增选择器</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/15/15fbf40815f2e26b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="css3提供的选择器"></p>
+</li>
+</ul>
+<ul>
+<li><p>阴影</p>
+<p>box-shadow: 水平阴影的位置 垂直阴影的位置 模糊距离 阴影的大小 阴影的颜色 阴影开始方向（默认是从里往外，设置inset就是从外往里）;</p>
+<p>  box-shadow: 10px 10px 5px #888888;</p>
+</li>
+</ul>
+<ul>
+<li><p>边框</p>
+<p>边框图片：border-image</p>
+<p>边框圆角：border-radius</p>
+</li>
+</ul>
+<ul>
+<li><p>背景</p>
+<p>指定背景描绘区域： background-clip（border-box，padding， content-box）</p>
+<p>指定background-position属性为相对位置：background-origin（border-box，padding， content-box）</p>
+<p>指定背景的大小：background-size（contain，cover，auto， center）</p>
+</li>
+</ul>
+<ul>
+<li><p>反射</p>
+<p>倒影</p>
+<p>-webkit-box-reflect:方向[ above-上 | below-下 | right-右 | left-左 ]，偏移量，遮罩图片</p>
+</li>
+</ul>
+<ul>
+<li><p>文字</p>
+<p>文字阴影</p>
+<p>text-shadow:水平阴影，垂直阴影，模糊的距离，以及阴影的颜色</p>
+<p>换行</p>
+<p>word-break: normal|break-all（单词内换行）|keep-all</p>
+<p>word-wrap: normal|break-word</p>
+<p>省略号</p>
+<p>text-overflow：clip|ellipsis|string</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 单行</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>; </span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line"></span><br><span class="line">// 多行</span><br><span class="line"><span class="selector-tag">overflow</span> : <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 2;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>颜色 </p>
+<p> rgba（rgb为颜色值，a为透明度）</p>
+<p> h:色相”，“s：饱和度”，“l：亮度”，“a：透明度”</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">color</span>: <span class="selector-tag">hsla</span>( 112, 72%, 33%, 0<span class="selector-class">.68</span>);</span><br><span class="line"><span class="selector-tag">background-color</span>: <span class="selector-tag">hsla</span>( 49, 65%, 60%, 0<span class="selector-class">.68</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>渐变(Gradient)<a href="https://www.cnblogs.com/coco1s/p/7079529.html" target="_blank" rel="noopener">Link</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>滤镜(Filter)</li>
+</ul>
+<ul>
+<li><p>媒体查询 (@media  screen)    </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">960px</span>) &#123;</span><br><span class="line">      <span class="selector-tag">body</span> &#123;</span><br><span class="line">          <span class="attribute">background-color</span>: darkgoldenrod;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>弹性布局（flex）<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Link</a></li>
+</ul>
+<ul>
+<li>栅格布局（grid）<a href="https://www.jianshu.com/p/d183265a8dad" target="_blank" rel="noopener">Link</a></li>
+</ul>
+<h5 id="5-可继承属性"><a href="#5-可继承属性" class="headerlink" title="5. 可继承属性"></a>5. 可继承属性</h5><p>​    可继承的样式：font-size, font-family, color，ul，li，dl，dt，dd；</p>
+<p>​    不可继承的样式：border, padding, margin, width, height</p>
+<h5 id="6-display与position属性"><a href="#6-display与position属性" class="headerlink" title="6. display与position属性"></a>6. display与position属性</h5><ul>
+<li>display:none与visibility:hidden、opacity:0的优缺点与使用场景？</li>
+</ul>
+<h5 id="7-元素的水平垂直居中"><a href="#7-元素的水平垂直居中" class="headerlink" title="7. 元素的水平垂直居中"></a>7. 元素的水平垂直居中</h5><h5 id="8-清楚浮动的常见方法"><a href="#8-清楚浮动的常见方法" class="headerlink" title="8. 清楚浮动的常见方法"></a>8. 清楚浮动的常见方法</h5><h5 id="9-BFC（块格式化上下文）"><a href="#9-BFC（块格式化上下文）" class="headerlink" title="9. BFC（块格式化上下文）"></a>9. BFC（块格式化上下文）</h5><h5 id="10-CSS常见单位"><a href="#10-CSS常见单位" class="headerlink" title="10. CSS常见单位"></a>10. CSS常见单位</h5><h5 id="11-CSS的预处理器"><a href="#11-CSS的预处理器" class="headerlink" title="11. CSS的预处理器"></a>11. CSS的预处理器</h5><h5 id="12-CSS的伪类与伪元素"><a href="#12-CSS的伪类与伪元素" class="headerlink" title="12. CSS的伪类与伪元素"></a>12. CSS的伪类与伪元素</h5><h5 id="13-CSS的1像素问题"><a href="#13-CSS的1像素问题" class="headerlink" title="13. CSS的1像素问题"></a>13. CSS的1像素问题</h5><h5 id="14-CSS的性能优化"><a href="#14-CSS的性能优化" class="headerlink" title="14. CSS的性能优化"></a>14. CSS的性能优化</h5><h5 id="15-浏览器的重绘-repaint-与回流-reflow"><a href="#15-浏览器的重绘-repaint-与回流-reflow" class="headerlink" title="15. 浏览器的重绘(repaint)与回流(reflow)"></a>15. 浏览器的重绘(repaint)与回流(reflow)</h5><h5 id="16-多行文本省略号的实现方案"><a href="#16-多行文本省略号的实现方案" class="headerlink" title="16. 多行文本省略号的实现方案"></a>16. 多行文本省略号的实现方案</h5><h5 id="17-页面的响应式设计与自适应设计"><a href="#17-页面的响应式设计与自适应设计" class="headerlink" title="17. 页面的响应式设计与自适应设计"></a>17. 页面的响应式设计与自适应设计</h5><h5 id="18-移动端页面适配问题"><a href="#18-移动端页面适配问题" class="headerlink" title="18. 移动端页面适配问题"></a>18. 移动端页面适配问题</h5><hr>
+<h5 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h5>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://github.com/ZhengMaster2020/ZhengMaster2020.github.io">ZhengMaster</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud"> Pure Theme</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
