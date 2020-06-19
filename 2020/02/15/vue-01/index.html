@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ZhengMaster的博客">
+    <meta name="keyword" content="hexo bolg 个人博客">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Vue框架-深入原理学习 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>ZhengMaster</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue的必会知识"><span class="toc-text">Vue的必会知识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-数据驱动"><span class="toc-text">1.  数据驱动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-组件化"><span class="toc-text">2. 组件化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-响应式原理"><span class="toc-text">3. 响应式原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#参考文章："><span class="toc-text">参考文章：</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Vue框架-深入原理学习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-02-15 21:25:29</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#vue 框架 基础" title="vue 框架 基础">vue 框架 基础</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="Vue的必会知识"><a href="#Vue的必会知识" class="headerlink" title="Vue的必会知识"></a>Vue的必会知识</h2><h5 id="1-数据驱动"><a href="#1-数据驱动" class="headerlink" title="1.  数据驱动"></a>1.  数据驱动</h5><h5 id="2-组件化"><a href="#2-组件化" class="headerlink" title="2. 组件化"></a>2. 组件化</h5><h5 id="3-响应式原理"><a href="#3-响应式原理" class="headerlink" title="3. 响应式原理"></a>3. 响应式原理</h5><p><strong>1.Vue必会技能（数据驱动、组件化、响应式原理）</strong></p>
+<p>Vue的核心知识点现在几乎已经成为前端开发工程师面试以及工作必会的内容，<strong>本课程会带您了解Flow、目录结构、源码构建，了解数据驱动及DOM创建的完成过程，组件创建、组件相关核心概念，完整的讲述响应式的实现原理。</strong>让你在Vue.js方面会有一个质的提升，对javascript的概念有更深刻的理解。</p>
+<p><strong>2.Vue语法解析（parse、optimize、codegen）</strong></p>
+<p>Vue底层的抽象语法书（AST），是一个非常基础又重要的知识点，但国内的文档几乎一片空白。<strong>本课程将带大家从底层了解AST，吃透javascript的语言精髓。</strong></p>
+<p><strong>3.Vue知识扩展（event、v-model、slot、keep-alive）</strong></p>
+<p>我们平时对Vue的使用可能仅仅只是停留在常用指令v-if、v-show这些最常用的指令中，一旦遇见一些别的技术点，反而这种很简单的技术点会成为你工作中的大难题<strong>。本节课将带你对Vue技术点进行进一步的提升event&amp;v-model：event事件和v-model的实现原理。Slot&amp;keep-alive：内置组件的实现原理。Transition..：过渡的实现原理</strong></p>
+<p><strong>4.Vue周边资源（Vue-Router、Vuex）</strong></p>
+<p>Vue-Router路由和Vuex可预测状态管理器，我们在做前端开发的时候是一定会接触到这两个周边框架的，可能我们多数人只是停留在应用层面。<strong>本课程将带您学习Vue的官方路由的实现原理、官方状态管理实现原理，加强你对这两个应用的使用。</strong></p>
+<p><strong>1. 手写分析——《页面模板渲染》</strong></p>
+<ul>
+<li>Vue 页面渲染原理</li>
+<li>页面模板模拟</li>
+<li>递归生成 DOM 树</li>
+</ul>
+<p>Vue 的渲染采用的是以字符串为模板，然后进行编译生成抽象语法树，最后得到虚拟 DOM 来进行的页面渲染。我们一开始不进行这么复杂的处理，看看直接使用 DOM 树作为模板来进行渲染的实现方法。</p>
+<p><strong>2. 手写分析——《发布订阅设计模式》</strong></p>
+<ul>
+<li>观察者模式</li>
+<li>发布订阅模式</li>
+</ul>
+<p>Vue 源码中使用了大量设计模式，巧妙而且灵活，在直接上手源码的过程中，很难抓住重点。因为源码都是生产环境的代码，有大量的兼容，关系处理，兼容不同环境，为了复用还会涉及到很多层面的调用。所以我们将涉及到的设计模式抽取出来，单独加以介绍举例。</p>
+<p><strong>3. 手写分析——《响应式原理》</strong></p>
+<ul>
+<li>发布订阅模式的应用</li>
+<li>单层响应式</li>
+</ul>
+<p>在熟练发布订阅模式后，我们将其融入到代码中，看看在不考虑多层对象的时候如何将发布订阅模式应用到代码中，实现我们的第一个简化版的响应式框架。</p>
+<p><strong>4. 源码准备——《flow 与 rollup》</strong></p>
+<ul>
+<li>flow</li>
+<li>rollup</li>
+</ul>
+<p>如果没有研究源码经验的开发者还是建议使用完善，成熟的源码进行入手。而 Vue 2.x中使用的flow是一个类型的校验工具，可以简单的认为他是一个静态分析工具，或编译检查工具。而且非破坏式的引入，完全可以作为我们一般开发任务的工具进行引入。</p>
+<p><strong>5. 源码准备——《Vue 实例初始化》</strong></p>
+<ul>
+<li>Vue 的源码结构</li>
+<li>实例化过程</li>
+<li>数据属性方法的挂载</li>
+</ul>
+<p>Vue的源码结构比较绕，同时使用了大量的面向对象的高级技巧。重写方法，扩展方法，多态等应用，从 Vue 实例的加载过程就可以看出来。</p>
+<p><strong>6. 源码准备——《代理与拦截》</strong></p>
+<ul>
+<li>def 方法与不可枚举属性</li>
+<li>Object.defineProperty 属性拦截</li>
+<li>proxy 代理属性访问</li>
+</ul>
+<p>逐步分析Vue的代码实现过程，进入源码后我们先看看属性拦截，这是实现响应式很重要的手段。另外还有def方法，proxy方法，Vue中使用了很多这类方法来辅助实例的使用。</p>
+<p><strong>7. 高级技巧——《响应式》</strong></p>
+<ul>
+<li>递归观察对象</li>
+<li>依赖收集</li>
+<li>更新派发</li>
+</ul>
+<p>在Vue中，使用了observer，watcher，和dep三种对象来实现响应式。而响应式的属性是具有嵌套特征的复杂对象，这里涉及到设计模式，递归与算法等，可谓是代码的技巧精华所在。</p>
+<p><strong>8.高级技巧——《宏任务与微任务》</strong></p>
+<ul>
+<li>事件循环</li>
+<li>宏任务与微任务的执行模型</li>
+</ul>
+<p>Vue终究是运行于浏览器的JS框架，为了提高性能，Vue的代码里面使用了非常多的技巧，也是初学源码的朋友比较绕不开的原因。这里结合事件循环机制，介绍一下Vue中nextTick的实现，看看是如何优化代码的。</p>
+<p><strong>9. 高级技巧——《计算属性》</strong></p>
+<ul>
+<li>发布订阅模式</li>
+<li>计算属性的响应式原理</li>
+</ul>
+<p>响应式不仅仅出现在属性上，计算属性也是非常有意思的实现，把它放在这里是因为前面所有的技巧都是为了支撑这个地方的实现逻辑。</p>
+<p>熟悉浏览器的资源加载、渲染机制、性能优化、跨平台兼容性问题、Web安全；</p>
+<hr>
+<h5 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h5><p><a href="https://blog.csdn.net/weixin_33691817/article/details/91392503" target="_blank" rel="noopener">2019 CSS经典面试题，最全</a><br><a href="https://juejin.im/post/599970f4518825243a78b9d5#heading-58" target="_blank" rel="noopener">CSS 常见布局方式</a><br><a href="https://juejin.im/post/5e53cefbf265da57570475a7#heading-72" target="_blank" rel="noopener">CSS知识点面试总结</a><br><a href="https://juejin.im/post/5e8d5268f265da480f0f9c6e#heading-19" target="_blank" rel="noopener">CSS知识点整理</a><br><a href="https://juejin.im/post/5a954add6fb9a06348538c0d#heading-14" target="_blank" rel="noopener">CSS知识点及技巧整理</a><br><a href="https://juejin.im/post/5e8b163ff265da47ee3f54a6#heading-12" target="_blank" rel="noopener">2020年前端面试复习必读文章</a><br><a href="https://juejin.im/post/5d387f696fb9a07eeb13ea60" target="_blank" rel="noopener">一个合格(优秀)的前端都应该阅读这些文章</a></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://github.com/ZhengMaster2020/ZhengMaster2020.github.io">ZhengMaster</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud"> Pure Theme</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

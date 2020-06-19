@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ZhengMaster的博客">
+    <meta name="keyword" content="hexo bolg 个人博客">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        谈谈对Git的理解 - ZhengMaster的博客 | Zhengmaster&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>ZhengMaster</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#谈一谈对Git的理解"><span class="toc-text">谈一谈对Git的理解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-Git的诞生以及相关历史"><span class="toc-text">1. Git的诞生以及相关历史</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Git与SVN、CVS的区别"><span class="toc-text">2. Git与SVN、CVS的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-代码托管平台"><span class="toc-text">3. 代码托管平台</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-Git的工作原理"><span class="toc-text">4. Git的工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-git文件夹"><span class="toc-text">5.  .git文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-Git的常用命令"><span class="toc-text">6. Git的常用命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-Git-Flow"><span class="toc-text">7. Git Flow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-实践操作"><span class="toc-text">8. 实践操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Git深入学习链接："><span class="toc-text">Git深入学习链接：</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Talk is cheap. Show me the code -&gt;  屁话少说，放码过来 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        谈谈对Git的理解
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-05-15 11:25:29</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#Git 原理" title="Git 原理">Git 原理</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h3 id="谈一谈对Git的理解"><a href="#谈一谈对Git的理解" class="headerlink" title="谈一谈对Git的理解"></a>谈一谈对Git的理解</h3><h5 id="1-Git的诞生以及相关历史"><a href="#1-Git的诞生以及相关历史" class="headerlink" title="1. Git的诞生以及相关历史"></a>1. Git的诞生以及相关历史</h5><p>​    Git 为<code>分布式</code>版本控制系统</p>
+<p>​    Git的爸爸：Linus Torvalds <a href="[https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%9C%AC%E7%BA%B3%E7%AC%AC%E5%85%8B%E7%89%B9%C2%B7%E6%89%98%E7%93%A6%E5%85%B9/1034429?fromtitle=linus&fromid=400810](https://baike.baidu.com/item/林纳斯·本纳第克特·托瓦兹/1034429?fromtitle=linus&fromid=400810)">林纳斯</a> </p>
+<h5 id="2-Git与SVN、CVS的区别"><a href="#2-Git与SVN、CVS的区别" class="headerlink" title="2. Git与SVN、CVS的区别"></a>2. Git与SVN、CVS的区别</h5><ul>
+<li>Git</li>
+<li>SVN</li>
+<li>CVS</li>
+</ul>
+<h5 id="3-代码托管平台"><a href="#3-代码托管平台" class="headerlink" title="3. 代码托管平台"></a>3. 代码托管平台</h5><ul>
+<li>GitHub</li>
+<li>Gitlab</li>
+<li>国内代码托管平台<ul>
+<li>Gitee <a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></li>
+<li>Coding <a href="https://coding.net/" target="_blank" rel="noopener">https://coding.net/</a></li>
+<li>阿里云代码托管： <a href="https://code.aliyun.com/" target="_blank" rel="noopener">https://code.aliyun.com</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="4-Git的工作原理"><a href="#4-Git的工作原理" class="headerlink" title="4. Git的工作原理"></a>4. Git的工作原理</h5><p>​    Git 保存的不是文件的变化或者差异，而是一系列不同时刻的文件快照。在进行提交操作时，Git 会保存一个提交对象（commit object）。该提交对象会包含一个指向暂存内容快照的指针。 但不仅仅是这样，该提交对象还包含了作者的姓名和邮箱、提交时输入的信息以及指向它的父对象的指针。</p>
+<ul>
+<li><p>Git存储</p>
+<p>Git分区</p>
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/12/4/16ecec84bf053b2f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="图片加载失败"></p>
+<h5 id="5-git文件夹"><a href="#5-git文件夹" class="headerlink" title="5.  .git文件夹"></a>5.  <strong>.git</strong>文件夹</h5><h5 id="6-Git的常用命令"><a href="#6-Git的常用命令" class="headerlink" title="6. Git的常用命令"></a>6. Git的常用命令</h5><ul>
+<li>简单命令</li>
+<li>高级命令<ul>
+<li><a href="https://backlog.com/git-tutorial/cn/stepup/stepup1_1.html" target="_blank" rel="noopener">https://backlog.com/git-tutorial/cn/stepup/stepup1_1.html</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="7-Git-Flow"><a href="#7-Git-Flow" class="headerlink" title="7. Git Flow"></a>7. Git Flow</h5><h5 id="8-实践操作"><a href="#8-实践操作" class="headerlink" title="8. 实践操作"></a>8. 实践操作</h5><ul>
+<li>初始化git项目</li>
+<li>本地仓库关联远程仓库</li>
+<li>将本地代码推到远程仓库</li>
+<li>合并其它分支的代码</li>
+<li>解决代码冲突</li>
+<li>修改某次的commit</li>
+<li>撤销某次的提交 submit</li>
+<li>查看提交历史记录</li>
+</ul>
+<hr>
+<h6 id="Git深入学习链接："><a href="#Git深入学习链接：" class="headerlink" title="Git深入学习链接："></a><strong>Git深入学习链接：</strong></h6><ul>
+<li>网站链接<ul>
+<li><a href="https://backlog.com/git-tutorial/cn/" target="_blank" rel="noopener">猴子都能懂的Git入门</a></li>
+<li><a href="https://juejin.im/post/5c714d18f265da2d98090503#heading-35" target="_blank" rel="noopener">图解git原理与日常实用指南</a></li>
+<li><a href="![1592574555475](C:\Users\lizheng\AppData\Roaming\Typora\typora-user-images\1592574555475.png)">Git工作流</a></li>
+</ul>
+</li>
+<li>视频网站<ul>
+<li><a href="https://www.bilibili.com/video/BV1pW411A7a5?p=2" target="_blank" rel="noopener">哔哩哔哩</a></li>
+</ul>
+</li>
+<li>相关书籍<ul>
+<li>《GitHub入门与实践》<a href="https://pan.baidu.com/s/1HC0Ee9tqTpzx7kBS_zhwXQ" target="_blank" rel="noopener">pdf文档</a>  <strong>提取码：cyvs</strong></li>
+<li>《Git权威指南》<a href="https://pan.baidu.com/s/1QefwPEALg4M1QIJwvy5Iog" target="_blank" rel="noopener">pdf文档</a>  <strong>提取码：x488</strong></li>
+<li>《Git权威指南》 <a href="http://www.worldhello.net/gotgit/#id7" target="_blank" rel="noopener">在线阅读</a></li>
+<li>《Pro Git》 <a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">在线阅读</a></li>
+</ul>
+</li>
+</ul>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://github.com/ZhengMaster2020/ZhengMaster2020.github.io">ZhengMaster</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud"> Pure Theme</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
